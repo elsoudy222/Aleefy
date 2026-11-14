@@ -1,4 +1,4 @@
-import 'package:aleefy/aleefy_app.dart';
+import 'package:aleefy/aleefy/aleefy_app.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:aleefy/core/constants/app_constants.dart';
 
