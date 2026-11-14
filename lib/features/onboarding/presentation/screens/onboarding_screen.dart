@@ -141,24 +141,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     count: OnboardingData.items.length,
                     currentIndex: _currentIndex,
                   ),
-                  const SizedBox(height: 28),
-                  AppMainButton(onPressed: () {}, title: "Login"),
-                  SizedBox(height: 10),
-                  ElevatedButton(
+                  const SizedBox(height: 35),
+                  AppMainButton(
                     onPressed: _onNextPressed,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(isLastPage ? 'Get Started' : 'Next'),
-                        const SizedBox(width: 8),
-                        Icon(
-                          isLastPage
-                              ? Icons.rocket_launch
-                              : Icons.arrow_forward_rounded,
-                          size: 18,
-                        ),
-                      ],
-                    ),
+                    title: isLastPage ? 'Get Started' : 'Next',
+                    icon: isLastPage
+                        ? Icons.rocket_launch
+                        : Icons.arrow_forward_rounded,
                   ),
                 ],
               ),
