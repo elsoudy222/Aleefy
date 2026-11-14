@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A1A" />
+      <stop offset="100%" stop-color="#FF5100" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Icon Mark: Squircle Container -->
+  <g transform="translate(20, 20)">
+    <rect x="0" y="0" width="160" height="160" rx="42" fill="url(#pawGrad)" />
+    
+    <!-- Heart Paw -->
+    <g fill="#FFFFFF" transform="translate(18, 12) scale(0.48)">
+      <!-- Central Heart-Pad -->
+      <path d="M130,230 C94,230 52,197 52,149 C52,110 82,85 114,85 C122,85 126,88 130,92 C134,88 138,85 146,85 C178,85 208,110 208,149 C208,197 166,230 130,230 Z" />
+      <!-- Beans -->
+      <ellipse cx="40" cy="70" rx="20" ry="28" transform="rotate(-22 40 70)" />
+      <ellipse cx="94" cy="40" rx="21" ry="30" transform="rotate(-8 94 40)" />
+      <ellipse cx="166" cy="40" rx="21" ry="30" transform="rotate(8 166 40)" />
+      <ellipse cx="220" cy="70" rx="20" ry="28" transform="rotate(22 220 70)" />
+    </g>
+  </g>
+
+  <!-- Typography Right Side -->
+  <g transform="translate(210, 30)">
+    <!-- Brand Name (English) -->
+    <text x="0" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="#111827" letter-spacing="-1.5">
+      Aleefy
+    </text>
+    
+    <!-- Brand Name (Arabic) -->
+    <text x="235" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Cairo', 'Almarai', sans-serif" font-size="34" font-weight="700" fill="#FF5100">
+      أليفي
+    </text>
+
+    <!-- Tagline (Universal & Globally Scalable) -->
+    <text x="5" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="500" fill="#6B7280" letter-spacing="1.2">
+      Every Paw Matters
+    </text>
+  </g>
+</svg>

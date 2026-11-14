@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A1A" />
+      <stop offset="100%" stop-color="#FF5100" />
+    </linearGradient>
+
+    <!-- Subtle Shadow -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.18" />
+    </filter>
+
+    <!-- Inner Glow / Highlight -->
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle App Icon Base -->
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#bgGrad)" filter="url(#softShadow)" />
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#glowGrad)" />
+
+  <!-- The Aleefy Emblem: Heart-Paw Combination -->
+  <g fill="#FFFFFF" transform="translate(0, -10)">
+    <!-- Central Heart-Pad -->
+    <path d="M256,365 C220,365 178,332 178,284 C178,245 208,220 240,220 C248,220 252,223 256,227 C260,223 264,220 272,220 C304,220 334,245 334,284 C334,332 292,365 256,365 Z" />
+
+    <!-- 4 Cute Paw Beans (Toes) -->
+    <!-- Far Left Bean -->
+    <ellipse cx="165" cy="200" rx="25" ry="34" transform="rotate(-22 165 200)" />
+    <!-- Center Left Bean -->
+    <ellipse cx="222" cy="165" rx="26" ry="37" transform="rotate(-8 222 165)" />
+    <!-- Center Right Bean -->
+    <ellipse cx="290" cy="165" rx="26" ry="37" transform="rotate(8 290 165)" />
+    <!-- Far Right Bean -->
+    <ellipse cx="347" cy="200" rx="25" ry="34" transform="rotate(22 347 200)" />
+  </g>
+
+  <!-- Subtle UAE / Location Accent Dot at the bottom -->
+  <circle cx="256" cy="415" r="9" fill="#FFFFFF" opacity="0.85" />
+</svg>
