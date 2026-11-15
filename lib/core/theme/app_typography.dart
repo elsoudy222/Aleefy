@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
@@ -11,64 +12,68 @@ abstract class AppTypography {
   /// اسم عائلة الخط المستخدمة للتطبيق (Cairo)
   static final String? fontFamily = GoogleFonts.cairo().fontFamily;
 
+  // NOTE: these are getters (not static final) on purpose. A static final
+  // is evaluated once when the class is first used — possibly before
+  // ScreenUtilInit runs — and '.sp' before that throws. A getter is
+  // evaluated lazily on every use, always after ScreenUtil is ready.
   /// عناوين رئيسية كبيرة (Large Headings)
-  static final TextStyle heading1 = GoogleFonts.cairo(
-    fontSize: 28,
-    fontWeight: FontWeight.bold,
-    color: AppColors.textPrimary,
-    letterSpacing: -0.5,
-  );
+  static TextStyle get heading1 => GoogleFonts.cairo(
+        fontSize: 28.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColors.textPrimary,
+        letterSpacing: -0.5,
+      );
 
   /// عناوين متوسطة (Medium Headings)
-  static final TextStyle heading2 = GoogleFonts.cairo(
-    fontSize: 22,
-    fontWeight: FontWeight.bold,
-    color: AppColors.textPrimary,
-    letterSpacing: -0.3,
-  );
+  static TextStyle get heading2 => GoogleFonts.cairo(
+        fontSize: 22.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColors.textPrimary,
+        letterSpacing: -0.3,
+      );
 
   /// عناوين أقسام (Section Headings)
-  static final TextStyle heading3 = GoogleFonts.cairo(
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
-    color: AppColors.textPrimary,
-  );
+  static TextStyle get heading3 => GoogleFonts.cairo(
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w600,
+        color: AppColors.textPrimary,
+      );
 
   /// نصوص المحتوى الكبيرة (Body Large)
-  static final TextStyle bodyLarge = GoogleFonts.cairo(
-    fontSize: 16,
-    fontWeight: FontWeight.normal,
-    color: AppColors.textPrimary,
-    height: 1.5,
-  );
+  static TextStyle get bodyLarge => GoogleFonts.cairo(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.normal,
+        color: AppColors.textPrimary,
+        height: 1.5,
+      );
 
   /// نصوص المحتوى العادية (Body Medium)
-  static final TextStyle bodyMedium = GoogleFonts.cairo(
-    fontSize: 14,
-    fontWeight: FontWeight.normal,
-    color: AppColors.textSecondary,
-    height: 1.4,
-  );
+  static TextStyle get bodyMedium => GoogleFonts.cairo(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.normal,
+        color: AppColors.textSecondary,
+        height: 1.4,
+      );
 
   /// نصوص ثانوية وتلميحات (Body Small / Hints)
-  static final TextStyle bodySmall = GoogleFonts.cairo(
-    fontSize: 12,
-    fontWeight: FontWeight.normal,
-    color: AppColors.textHint,
-  );
+  static TextStyle get bodySmall => GoogleFonts.cairo(
+        fontSize: 12.sp,
+        fontWeight: FontWeight.normal,
+        color: AppColors.textHint,
+      );
 
   /// نصوص الأزرار (Buttons)
-  static final TextStyle button = GoogleFonts.cairo(
-    fontSize: 16,
-    fontWeight: FontWeight.w600,
-    color: Colors.white,
-    letterSpacing: 0.2,
-  );
+  static TextStyle get button => GoogleFonts.cairo(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        color: Colors.white,
+        letterSpacing: 0.2,
+      );
 
   /// التسميات الصغيرة والشارات (Captions & Badges)
-  static final TextStyle caption = GoogleFonts.cairo(
-    fontSize: 11,
-    fontWeight: FontWeight.w500,
-    color: AppColors.textSecondary,
-  );
+  static TextStyle get caption => GoogleFonts.cairo(
+        fontSize: 11.sp,
+        fontWeight: FontWeight.w500,
+        color: AppColors.textSecondary,
+      );
 }

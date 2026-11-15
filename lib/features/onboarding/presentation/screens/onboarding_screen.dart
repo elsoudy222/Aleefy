@@ -3,9 +3,10 @@ import 'package:aleefy/core/components/app_buttons.dart';
 import 'package:aleefy/core/components/custom_images.dart';
 import 'package:aleefy/core/constants/app_assets.dart';
 import 'package:aleefy/core/constants/app_constants.dart';
-import 'package:aleefy/core/localization/generated/app_localizations.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -70,9 +71,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           children: [
             // شريط علوي: تخطي (Skip)
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20.0,
-                vertical: 8.0,
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+                vertical: 8.h,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,12 +81,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   // شعار صغير واسم التطبيق
                   Row(
                     children: [
-                      const CustomSvgIconWidget(
+                      CustomSvgIconWidget(
                         path: AppAssets.logo,
-                        height: 28,
-                        width: 28,
+                        height: 28.h,
+                        width: 28.w,
                       ),
-                      const SizedBox(width: 8),
+                      SizedBox(width: 8.w),
                       // const SizedBox(width: 8),
                       Text(
                         AppConstants.appName,
@@ -107,15 +108,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         );
                       },
                       child: Text(
-                        AppLocalizations.of(context)!.skip,
+                        context.tr('skip'),
                         style: AppTypography.button.copyWith(
                           color: AppColors.textSecondary,
-                          fontSize: 14,
+                          fontSize: 14.sp,
                         ),
                       ),
                     )
                   else
-                    const SizedBox(height: 48), // للحفاظ على توازن الارتفاع
+                    SizedBox(height: 48.h), // للحفاظ على توازن الارتفاع
                 ],
               ),
             ),
@@ -140,7 +141,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
             // شريط سفلي: مؤشر الصفحات + الزر الأساسي (CTA)
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: EdgeInsets.symmetric(
+                horizontal: 24.w,
+                vertical: 24.h,
+              ),
               child: Column(
                 children: [
                   PageIndicator(
@@ -149,12 +153,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
 
                   // LanguageSwitcher(),
-                  const SizedBox(height: 35),
+                  SizedBox(height: 35.h),
                   AppMainButton(
                     onPressed: _onNextPressed,
                     title: isLastPage
-                        ? AppLocalizations.of(context)!.getStarted
-                        : AppLocalizations.of(context)!.next,
+                        ? context.tr('getStarted')
+                        : context.tr('next'),
                     icon: isLastPage
                         ? Icons.rocket_launch
                         : Icons.arrow_forward_rounded,
@@ -177,10 +181,16 @@ class LanguageSwitcher extends StatelessWidget {
     return BlocBuilder<AppCubit, Locale?>(
       builder: (context, locale) {
         return SegmentedButton<Locale?>(
-          segments: const [
-            ButtonSegment(value: null, label: Text('System')),
-            ButtonSegment(value: Locale('ar'), label: Text('العربية')),
-            ButtonSegment(value: Locale('en'), label: Text('English')),
+          segments: [
+            ButtonSegment(value: null, label: Text(context.tr('systemLang'))),
+            ButtonSegment(
+              value: const Locale('ar'),
+              label: Text(context.tr('arabic')),
+            ),
+            ButtonSegment(
+              value: const Locale('en'),
+              label: Text(context.tr('english')),
+            ),
           ],
           selected: {locale},
           style: ButtonStyle(

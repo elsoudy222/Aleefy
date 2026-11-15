@@ -1,6 +1,7 @@
 import 'package:aleefy/core/theme/app_colors.dart';
 import 'package:aleefy/core/theme/app_typography.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppMainButton extends StatelessWidget {
   final String title;
@@ -28,8 +29,9 @@ class AppMainButton extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(width: 8),
-          if (icon != null) Icon(icon, size: 18, color: AppColors.background),
+          SizedBox(width: 8.w),
+          if (icon != null)
+            Icon(icon, size: 18.w, color: AppColors.background),
         ],
       ),
     );
@@ -52,11 +54,13 @@ class SecondaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 52,
-      padding: const EdgeInsets.all(10),
+      height: 52.h,
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       decoration: ShapeDecoration(
         color: AppColors.background,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.r),
+        ),
         shadows: [
           BoxShadow(
             color: AppColors.secondaryLight.withValues(alpha: 0.25),
@@ -77,8 +81,9 @@ class SecondaryButton extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(width: 8),
-          if (icon != null) Icon(icon, size: 18, color: AppColors.primaryDark),
+          SizedBox(width: 8.w),
+          if (icon != null)
+            Icon(icon, size: 18.w, color: AppColors.primaryDark),
         ],
       ),
     );

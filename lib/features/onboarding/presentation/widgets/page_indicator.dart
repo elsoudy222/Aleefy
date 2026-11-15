@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 
 /// مؤشر الصفحات التفاعلي (Animated Page Indicator)
@@ -25,12 +26,12 @@ class PageIndicator extends StatelessWidget {
         return AnimatedContainer(
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeInOut,
-          margin: const EdgeInsets.symmetric(horizontal: 4),
-          height: 8,
-          width: isActive ? 28 : 8,
+          margin: EdgeInsets.symmetric(horizontal: 4.w),
+          height: 8.h,
+          width: isActive ? 28.w : 8.w,
           decoration: BoxDecoration(
             color: isActive ? AppColors.primary : AppColors.border,
-            borderRadius: BorderRadius.circular(4),
+            borderRadius: BorderRadius.circular(4.r),
           ),
         );
       }),

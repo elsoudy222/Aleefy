@@ -1,5 +1,6 @@
 import 'package:aleefy/core/components/custom_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -14,14 +15,14 @@ class OnboardingPageItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Illustration / Icon Hero Container
           Container(
-            width: 220,
-            height: 220,
+            width: 220.w,
+            height: 220.h,
             decoration: BoxDecoration(
               color: item.accentColor.withValues(alpha: 0.1),
               shape: BoxShape.circle,
@@ -32,14 +33,14 @@ class OnboardingPageItem extends StatelessWidget {
             ),
             child: Center(child: CustomSvgIconWidget(path: item.imageUrl)),
           ),
-          const SizedBox(height: 40),
+          SizedBox(height: 40.h),
 
           // Category Badge
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
             decoration: BoxDecoration(
               color: item.accentColor.withValues(alpha: 0.12),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.r),
             ),
             child: Text(
               item.badgeText,
@@ -50,15 +51,15 @@ class OnboardingPageItem extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16.h),
 
           // Title
           Text(
             item.title,
             textAlign: TextAlign.center,
-            style: AppTypography.heading1.copyWith(fontSize: 24),
+            style: AppTypography.heading1.copyWith(fontSize: 24.sp),
           ),
-          const SizedBox(height: 14),
+          SizedBox(height: 14.h),
 
           // Description
           Text(

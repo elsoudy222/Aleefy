@@ -1,7 +1,8 @@
 import 'dart:async';
 
-import 'package:aleefy/core/localization/generated/app_localizations.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/theme/app_colors.dart';
@@ -94,26 +95,30 @@ class _SplashScreenState extends State<SplashScreen>
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // أيقونة اللوجو الفيكتور الرسمية لتطبيق Aleefy
-                    SvgPicture.asset(AppAssets.logo, width: 120, height: 120),
-                    const SizedBox(height: 24),
+                    SvgPicture.asset(
+                      AppAssets.logo,
+                      width: 120.w,
+                      height: 120.h,
+                    ),
+                    SizedBox(height: 24.h),
 
                     // اسم التطبيق
                     Text(
                       AppConstants.appName,
                       style: AppTypography.heading1.copyWith(
-                        fontSize: 34,
+                        fontSize: 34.sp,
                         color: AppColors.textPrimary,
                         letterSpacing: -0.5,
                       ),
                     ),
-                    const SizedBox(height: 6),
+                    SizedBox(height: 6.h),
 
                     // الشعار اللفظي
                     Text(
-                      AppLocalizations.of(context)!.appTagline,
+                      context.tr('appTagline'),
                       style: AppTypography.bodyMedium.copyWith(
                         color: AppColors.textSecondary,
-                        fontSize: 15,
+                        fontSize: 15.sp,
                         letterSpacing: 0.2,
                       ),
                     ),

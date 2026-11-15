@@ -1,0 +1,23 @@
+{
+  "appName": "Aleefy",
+  "appTagline": "Every Paw Matters",
+  "arabic": "Arabic",
+  "english": "English",
+  "getStarted": "Get Started",
+  "login": "Login",
+  "next": "Next",
+  "onboarding1Badge": "Rescue & Protect",
+  "onboarding1ScreenDescription": "Spot an injured or stray animal? Pin the location, snap a photo, and alert nearby shelters and community heroes instantly.",
+  "onboarding1ScreenTitle": "Report & Rescue Stray Animals",
+  "onboarding2Badge": "Verified Vets",
+  "onboarding2ScreenDescription": "Find licensed veterinary clinics near you. Choose your preferred slot, view consultation fees, and confirm in seconds.",
+  "onboarding2ScreenTitle": "Book Top Veterinary Clinics",
+  "onboarding3Badge": "Shelters & Care",
+  "onboarding3ScreenDescription": "Give rescued pets a loving forever home. Browse verified shelter profiles and connect directly with caretakers.",
+  "onboarding3ScreenTitle": "Adopt & Support Local Shelters",
+  "onboarding4Badge": "Community & Support",
+  "onboarding4ScreenDescription": "Share pet moments, discover pet-friendly events, ask questions, and chat directly with pet owners and veterinarians.",
+  "onboarding4ScreenTitle": "Join the Global Pet Lovers Hub",
+  "skip": "Skip",
+  "systemLang": "System"
+}
