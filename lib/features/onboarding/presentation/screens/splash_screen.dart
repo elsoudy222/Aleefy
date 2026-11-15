@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:aleefy/core/localization/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -109,7 +110,7 @@ class _SplashScreenState extends State<SplashScreen>
 
                     // الشعار اللفظي
                     Text(
-                      AppConstants.appTagline,
+                      AppLocalizations.of(context)!.appTagline,
                       style: AppTypography.bodyMedium.copyWith(
                         color: AppColors.textSecondary,
                         fontSize: 15,

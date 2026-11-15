@@ -98,6 +98,36 @@ abstract class AppLocalizations {
     Locale('en'),
   ];
 
+  /// No description provided for @english.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get english;
+
+  /// No description provided for @arabic.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic'**
+  String get arabic;
+
+  /// No description provided for @systemLang.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get systemLang;
+
+  /// No description provided for @appName.
+  ///
+  /// In en, this message translates to:
+  /// **'Aleefy'**
+  String get appName;
+
+  /// No description provided for @appTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Every Paw Matters'**
+  String get appTagline;
+
   /// No description provided for @skip.
   ///
   /// In en, this message translates to:
@@ -122,17 +152,77 @@ abstract class AppLocalizations {
   /// **'Login'**
   String get login;
 
-  /// No description provided for @appTagline.
+  /// No description provided for @onboarding1Badge.
   ///
   /// In en, this message translates to:
-  /// **'Every Paw Matters'**
-  String get appTagline;
+  /// **'Rescue & Protect'**
+  String get onboarding1Badge;
 
-  /// No description provided for @reportStrayAnimals.
+  /// No description provided for @onboarding1ScreenTitle.
   ///
   /// In en, this message translates to:
   /// **'Report & Rescue Stray Animals'**
-  String get reportStrayAnimals;
+  String get onboarding1ScreenTitle;
+
+  /// No description provided for @onboarding1ScreenDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Spot an injured or stray animal? Pin the location, snap a photo, and alert nearby shelters and community heroes instantly.'**
+  String get onboarding1ScreenDescription;
+
+  /// No description provided for @onboarding2Badge.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified Vets'**
+  String get onboarding2Badge;
+
+  /// No description provided for @onboarding2ScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Book Top Veterinary Clinics'**
+  String get onboarding2ScreenTitle;
+
+  /// No description provided for @onboarding2ScreenDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Find licensed veterinary clinics near you. Choose your preferred slot, view consultation fees, and confirm in seconds.'**
+  String get onboarding2ScreenDescription;
+
+  /// No description provided for @onboarding3Badge.
+  ///
+  /// In en, this message translates to:
+  /// **'Shelters & Care'**
+  String get onboarding3Badge;
+
+  /// No description provided for @onboarding3ScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adopt & Support Local Shelters'**
+  String get onboarding3ScreenTitle;
+
+  /// No description provided for @onboarding3ScreenDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Give rescued pets a loving forever home. Browse verified shelter profiles and connect directly with caretakers.'**
+  String get onboarding3ScreenDescription;
+
+  /// No description provided for @onboarding4Badge.
+  ///
+  /// In en, this message translates to:
+  /// **'Community & Support'**
+  String get onboarding4Badge;
+
+  /// No description provided for @onboarding4ScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Join the Global Pet Lovers Hub'**
+  String get onboarding4ScreenTitle;
+
+  /// No description provided for @onboarding4ScreenDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Share pet moments, discover pet-friendly events, ask questions, and chat directly with pet owners and veterinarians.'**
+  String get onboarding4ScreenDescription;
 }
 
 class _AppLocalizationsDelegate
