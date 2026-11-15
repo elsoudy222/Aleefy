@@ -1,8 +1,11 @@
+import 'package:aleefy/aleefy/app_cubit/app_cubit.dart';
 import 'package:aleefy/core/components/app_buttons.dart';
 import 'package:aleefy/core/components/custom_images.dart';
 import 'package:aleefy/core/constants/app_assets.dart';
 import 'package:aleefy/core/constants/app_constants.dart';
+import 'package:aleefy/core/localization/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -34,7 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void _onNextPressed() {
-    if (_currentIndex < OnboardingData.items.length - 1) {
+    if (_currentIndex < OnboardingData.getItems(context).length - 1) {
       _pageController.nextPage(
         duration: const Duration(milliseconds: 350),
         curve: Curves.easeInOut,
@@ -57,7 +60,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLastPage = _currentIndex == OnboardingData.items.length - 1;
+    final bool isLastPage =
+        _currentIndex == OnboardingData.getItems(context).length - 1;
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -97,13 +101,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     TextButton(
                       onPressed: () {
                         _pageController.animateToPage(
-                          OnboardingData.items.length - 1,
+                          OnboardingData.getItems(context).length - 1,
                           duration: const Duration(milliseconds: 350),
                           curve: Curves.easeInOut,
                         );
                       },
                       child: Text(
-                        'Skip',
+                        AppLocalizations.of(context)!.skip,
                         style: AppTypography.button.copyWith(
                           color: AppColors.textSecondary,
                           fontSize: 14,
@@ -120,14 +124,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Expanded(
               child: PageView.builder(
                 controller: _pageController,
-                itemCount: OnboardingData.items.length,
+                itemCount: OnboardingData.getItems(context).length,
                 onPageChanged: (index) {
                   setState(() {
                     _currentIndex = index;
                   });
                 },
                 itemBuilder: (context, index) {
-                  return OnboardingPageItem(item: OnboardingData.items[index]);
+                  return OnboardingPageItem(
+                    item: OnboardingData.getItems(context)[index],
+                  );
                 },
               ),
             ),
@@ -138,13 +144,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Column(
                 children: [
                   PageIndicator(
-                    count: OnboardingData.items.length,
+                    count: OnboardingData.getItems(context).length,
                     currentIndex: _currentIndex,
                   ),
+
+                  // LanguageSwitcher(),
                   const SizedBox(height: 35),
                   AppMainButton(
                     onPressed: _onNextPressed,
-                    title: isLastPage ? 'Get Started' : 'Next',
+                    title: isLastPage
+                        ? AppLocalizations.of(context)!.getStarted
+                        : AppLocalizations.of(context)!.next,
                     icon: isLastPage
                         ? Icons.rocket_launch
                         : Icons.arrow_forward_rounded,
@@ -155,6 +165,33 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class LanguageSwitcher extends StatelessWidget {
+  const LanguageSwitcher({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AppCubit, Locale?>(
+      builder: (context, locale) {
+        return SegmentedButton<Locale?>(
+          segments: const [
+            ButtonSegment(value: null, label: Text('System')),
+            ButtonSegment(value: Locale('ar'), label: Text('العربية')),
+            ButtonSegment(value: Locale('en'), label: Text('English')),
+          ],
+          selected: {locale},
+          style: ButtonStyle(
+            shape: WidgetStateProperty.all(const StadiumBorder()),
+            // backgroundColor: WidgetStateProperty.all(Colors.orange),
+          ),
+          onSelectionChanged: (selection) {
+            context.read<AppCubit>().changeLocale(selection.first);
+          },
+        );
+      },
     );
   }
 }

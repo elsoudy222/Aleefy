@@ -1,4 +1,6 @@
 import 'package:aleefy/core/constants/app_assets.dart';
+import 'package:aleefy/core/localization/generated/app_localizations.dart';
+import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../domain/entities/onboarding_item.dart';
@@ -8,34 +10,37 @@ import '../../domain/entities/onboarding_item.dart';
 /// تصميم عالمي قابل للتوسع في أي دولة بالعالم،
 /// مع التركيز على جوهر التجربة: الإنقاذ، العيادات، التبني، والمجتمع.
 abstract class OnboardingData {
-  static const List<OnboardingItem> items = [
-    OnboardingItem(
-      badgeText: 'Rescue & Protect',
-      title: 'Report & Rescue Stray Animals',
-      description: 'Spot an injured or stray animal? Pin the location, snap a photo, and alert nearby shelters and community heroes instantly.',
-      imageUrl: AppAssets.onboarding1,
-      accentColor: AppColors.statusInjured,
-    ),
-    OnboardingItem(
-      badgeText: 'Verified Vets',
-      title: 'Book Top Veterinary Clinics',
-      description: 'Find licensed veterinary clinics near you. Choose your preferred slot, view consultation fees, and confirm in seconds.',
-      imageUrl: AppAssets.onboarding2,
-      accentColor: AppColors.primary,
-    ),
-    OnboardingItem(
-      badgeText: 'Shelters & Care',
-      title: 'Adopt & Support Local Shelters',
-      description: 'Give rescued pets a loving forever home. Browse verified shelter profiles and connect directly with caretakers.',
-      imageUrl: AppAssets.onboarding3,
-      accentColor: AppColors.statusRescued,
-    ),
-    OnboardingItem(
-      badgeText: 'Pet Community',
-      title: 'Join the Global Pet Lovers Hub',
-      description: 'Share pet moments, discover pet-friendly events, ask questions, and chat directly with pet owners and veterinarians.',
-      imageUrl: AppAssets.onboarding4,
-      accentColor: AppColors.secondary,
-    ),
-  ];
+  static List<OnboardingItem> getItems(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return [
+      OnboardingItem(
+        badgeText: l10n.onboarding1Badge,
+        title: l10n.onboarding1ScreenTitle,
+        description: l10n.onboarding1ScreenDescription,
+        imageUrl: AppAssets.onboarding1,
+        accentColor: AppColors.statusInjured,
+      ),
+      OnboardingItem(
+        badgeText: l10n.onboarding2Badge,
+        title: l10n.onboarding2ScreenTitle,
+        description: l10n.onboarding2ScreenDescription,
+        imageUrl: AppAssets.onboarding2,
+        accentColor: AppColors.primary,
+      ),
+      OnboardingItem(
+        badgeText: l10n.onboarding3Badge,
+        title: l10n.onboarding3ScreenTitle,
+        description: l10n.onboarding3ScreenDescription,
+        imageUrl: AppAssets.onboarding3,
+        accentColor: AppColors.statusRescued,
+      ),
+      OnboardingItem(
+        badgeText: l10n.onboarding4Badge,
+        title: l10n.onboarding4ScreenTitle,
+        description: l10n.onboarding4ScreenDescription,
+        imageUrl: AppAssets.onboarding4,
+        accentColor: AppColors.secondary,
+      ),
+    ];
+  }
 }
