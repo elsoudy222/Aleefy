@@ -115,7 +115,7 @@ class _SplashScreenState extends State<SplashScreen>
 
                     // الشعار اللفظي
                     Text(
-                      context.tr('appTagline'),
+                      "appTagline".tr(),
                       style: AppTypography.bodyMedium.copyWith(
                         color: AppColors.textSecondary,
                         fontSize: 15.sp,

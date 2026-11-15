@@ -10,39 +10,33 @@ import '../../domain/entities/onboarding_item.dart';
 /// تصميم عالمي قابل للتوسع في أي دولة بالعالم،
 /// مع التركيز على جوهر التجربة: الإنقاذ، العيادات، التبني، والمجتمع.
 abstract class OnboardingData {
-  // The BuildContext is REQUIRED here (not just for the signature):
-  // context.tr() asks Flutter for the translations of the current locale
-  // AND registers this widget as "interested" in the locale, so when the
-  // language changes the screen rebuilds with the new texts automatically.
-  // The plain 'key'.tr() form only reads a global value and does NOT
-  // rebuild the screen, so the old language would stay on screen.
   static List<OnboardingItem> getItems(BuildContext context) {
     return [
       OnboardingItem(
-        badgeText: context.tr('onboarding1Badge'),
-        title: context.tr('onboarding1ScreenTitle'),
-        description: context.tr('onboarding1ScreenDescription'),
+        badgeText: 'onboarding1Badge'.tr(),
+        title: 'onboarding1ScreenTitle'.tr(),
+        description: 'onboarding1ScreenDescription'.tr(),
         imageUrl: AppAssets.onboarding1,
         accentColor: AppColors.statusInjured,
       ),
       OnboardingItem(
-        badgeText: context.tr('onboarding2Badge'),
-        title: context.tr('onboarding2ScreenTitle'),
-        description: context.tr('onboarding2ScreenDescription'),
+        badgeText: 'onboarding2Badge'.tr(),
+        title: 'onboarding2ScreenTitle'.tr(),
+        description: 'onboarding2ScreenDescription'.tr(),
         imageUrl: AppAssets.onboarding2,
         accentColor: AppColors.primary,
       ),
       OnboardingItem(
-        badgeText: context.tr('onboarding3Badge'),
-        title: context.tr('onboarding3ScreenTitle'),
-        description: context.tr('onboarding3ScreenDescription'),
+        badgeText: 'onboarding3Badge'.tr(),
+        title: 'onboarding3ScreenTitle'.tr(),
+        description: 'onboarding3ScreenDescription'.tr(),
         imageUrl: AppAssets.onboarding3,
         accentColor: AppColors.statusRescued,
       ),
       OnboardingItem(
-        badgeText: context.tr('onboarding4Badge'),
-        title: context.tr('onboarding4ScreenTitle'),
-        description: context.tr('onboarding4ScreenDescription'),
+        badgeText: 'onboarding4Badge'.tr(),
+        title: 'onboarding4ScreenTitle'.tr(),
+        description: 'onboarding4ScreenDescription'.tr(),
         imageUrl: AppAssets.onboarding4,
         accentColor: AppColors.secondary,
       ),

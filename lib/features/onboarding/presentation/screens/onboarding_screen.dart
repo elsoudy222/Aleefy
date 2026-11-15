@@ -71,10 +71,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           children: [
             // شريط علوي: تخطي (Skip)
             Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.w,
-                vertical: 8.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -108,7 +105,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         );
                       },
                       child: Text(
-                        context.tr('skip'),
+                        'skip'.tr(),
                         style: AppTypography.button.copyWith(
                           color: AppColors.textSecondary,
                           fontSize: 14.sp,
@@ -141,10 +138,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
             // شريط سفلي: مؤشر الصفحات + الزر الأساسي (CTA)
             Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 24.w,
-                vertical: 24.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
               child: Column(
                 children: [
                   PageIndicator(
@@ -156,9 +150,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   SizedBox(height: 35.h),
                   AppMainButton(
                     onPressed: _onNextPressed,
-                    title: isLastPage
-                        ? context.tr('getStarted')
-                        : context.tr('next'),
+                    title: isLastPage ? 'getStarted'.tr() : 'next'.tr(),
                     icon: isLastPage
                         ? Icons.rocket_launch
                         : Icons.arrow_forward_rounded,
